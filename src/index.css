@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-lg border border-gray-200 p-6;
+  }
+  
+  .input-field {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Styles pour les corrections de texte */
+.correction-highlight {
+  @apply bg-red-100 border-b-2 border-red-400 cursor-pointer;
+}
+
+.correction-suggestion {
+  @apply bg-green-100 border-b-2 border-green-400;
+}
+
+/* Styles pour les quiz */
+.quiz-option {
+  @apply p-3 border-2 border-gray-200 rounded-lg cursor-pointer transition-all duration-200 hover:border-primary-300;
+}
+
+.quiz-option.selected {
+  @apply border-primary-500 bg-primary-50;
+}
+
+.quiz-option.correct {
+  @apply border-green-500 bg-green-50;
+}
+
+.quiz-option.incorrect {
+  @apply border-red-500 bg-red-50;
+}
